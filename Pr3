@@ -1,0 +1,10 @@
+def commonChars(A):
+    common = set(A[0]) 
+    for i in range(1, len(A)):
+        current = set(A[i]) 
+        common &= current 
+    return list(common)
+
+A = ["bella", "label", "roller"]
+result = commonChars(A)
+print(result) # ['l', 'e', 'l']
