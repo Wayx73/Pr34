@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int a[] = {1, 4, 6};
+    int b[] = {11, 33, 22};
+    int n = sizeof(a)/sizeof(a[0]);
+
+
+    int idx[n];
+    for(int i=0; i<n; i++) {
+        idx[i] = i;
+    }
+
+   
+    sort(idx, idx+n, [&](int i, int j) {
+        return b[i] < b[j];
+    });
+
+   
+    int sorted_a[n];
+    for(int i=0; i<n; i++) {
+        sorted_a[i] = a[idx[i]];
+    }
+
+  
+    for(int i=0; i<n; i++) {
+        cout << sorted_a[i] << " ";
+    }
+
+    return 0;
+}
